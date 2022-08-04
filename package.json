@@ -1,0 +1,18 @@
+{
+  "name": "shopit",
+  "version": "1.0.0",
+  "description": "full ecommerce site using mern",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon backend/server.js",
+    "dev" : "SET NODE_ENV=DEVELOPEMNT& nodemon backend/server.js",
+    "prod" : "SET NODE_ENV=PRODUCTION& nodemon backend/server.js"
+  },
+  "author": "Kamrul Hasan Rahat",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.1"
+  }
+}
