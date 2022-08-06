@@ -12,6 +12,14 @@ dotenv.config({
 //Connecting to database
 
 connectDatabase();
-app.listen(process.env.PORT,()=>{
+const server = app.listen(process.env.PORT,()=>{
     console.log(`Server started on PORT : ${process.env.PORT} in ${process.env.NODE_ENV} mode`)
+})
+
+process.on('unhandledRejection',err=>{
+    console.log(`ERROR: ${err.message}`)
+    console.log(`Shutting down the server due to unhandled promise rejection`)
+    server.close(()=>{  //  This function is asynchronous, the server is finally closed when all connections are ended and the server emits a 'close' event. i.e. when you call server. close() , server stops accepting new connections, but it keeps the existing connections open indefinitely.
+        process.exit() //   The process. exit() method is used to end the process which is running at the same time with an exit code in NodeJS.
+    })
 })

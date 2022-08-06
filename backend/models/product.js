@@ -38,7 +38,7 @@ const productSchema = new mongoose.Schema({
             values: [
                 'Electronics',
                 'Cameras',
-                'Laptop',
+                'Laptops',
                 'Accessories',
                 'Headphones',
                 'Food',
@@ -87,3 +87,5 @@ const productSchema = new mongoose.Schema({
     }
 
 })
+
+module.exports = mongoose.model('Product',productSchema)
