@@ -9,7 +9,7 @@ process.on('uncaughtException',(err)=>{ //  This uncaught exception handler shou
     console.log(`Shutting down due to uncaught exception`)
     process.exit(0) //exit(0) indicates that the program terminated without errors. exit(1) indicates that there were an error. You can use different values other than 1 to differentiate between different kind of errors.
 })
-console.log(x)
+// console.log(x)
 //Setting up config file
 dotenv.config({
     path: 'backend/config/config.env'
