@@ -13,9 +13,11 @@ exports.registerUser = catchAsyncErrors(async(req,res,next) => {
       url:'https://res.cloudinary.com/dkv0kqy6l/image/upload/v1660187201/Avators/dsvbpny402gelwugv2le_ifzm0l.jpg'
     }
   })
+  const jwtToken = user.jwtWebToken()
 
   res.status(201).json({
     status: true,
-    user
+    user,
+    token: jwtToken
   })
 })
